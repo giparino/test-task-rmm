@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { MenuComponent } from '@rmm-task/menu';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [MenuComponent, RouterModule],
   selector: 'rmm-task-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],

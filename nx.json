@@ -8,6 +8,11 @@
       }
     }
   },
+  "workspaceLayout": {
+    "projectNameAndRootFormat": "derived",
+    "appsDir": "apps",
+    "libsDir": "libs"
+  },
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
