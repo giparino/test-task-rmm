@@ -9,7 +9,7 @@ import { icons, ItemInterface } from './api.interface';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiPath = 'http://localhost:3000/animals';
+  private apiPath = 'http://localhost:3000/applications';
 
   constructor(private http: HttpClient) {}
 
@@ -21,8 +21,8 @@ export class ApiService {
     return this.http.post<ItemInterface>(this.apiPath, item);
   }
 
-  public deleteItem$(item: ItemInterface): Observable<ItemInterface> {
-    return this.http.delete<ItemInterface>(`${this.apiPath}/${item.id}`);
+  public deleteItem$(item: ItemInterface) {
+    return this.http.delete(`${this.apiPath}/${item.id}`);
   }
 }
 
