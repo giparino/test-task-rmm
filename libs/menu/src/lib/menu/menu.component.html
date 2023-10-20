@@ -1,12 +1,22 @@
 <mat-toolbar>
   <span>Menu</span>
   <span class="flex-1"></span>
-  <button mat-icon-button>
+  <button mat-icon-button (click)="removeApplication()">
     <mat-icon>remove</mat-icon>
   </button>
-  <button mat-icon-button>
+  <button mat-icon-button (click)="addApplication()">
     <mat-icon>add</mat-icon>
   </button>
 </mat-toolbar>
 
-<!--Your code here-->
+<div class="content">
+  <div class="card" *ngFor="let item of (applications$ | async); let index=index">
+    <div class="overlay" *ngIf="currentIndex === index"></div>
+    <div class="card__icon-container">
+      <mat-icon>{{item.icon}}</mat-icon>
+    </div>
+    <div class="card__text">
+      {{item.name}}
+    </div>
+  </div>
+</div>
