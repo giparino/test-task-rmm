@@ -1,3 +1,9 @@
 {
-  "applications": []
+  "applications": [
+    {
+      "id": "e13e03ff-12b2-484c-89fc-c057e4f7929e",
+      "name": "crab",
+      "icon": "open_in_new"
+    }
+  ]
 }
