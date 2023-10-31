@@ -2,25 +2,11 @@
   @apply block resize overflow-scroll min-h-[200px] min-w-[200px] h-[300px] w-[400px] border-[1px]
 }
 
-.content {
-  @apply flex flex-wrap p-[16px];
-}
-
-.card {
-  @apply relative mt-[15px] mr-[15px] border border-solid border-black;
-}
-
 .overlay {
-  @apply absolute -top-[1px] -bottom-[1px] -left-[1px] -right-[1px];
   background: rgba(43, 167, 167, 0.27);
   border: 2px solid rgba(43, 167, 167, 0.5);
 }
 
 .card__icon-container {
-  @apply w-[140px] h-[110px] flex justify-center items-center;
   background: #dee1f2;
-}
-
-.card__text {
-  @apply p-[7px] capitalize font-bold;
 }

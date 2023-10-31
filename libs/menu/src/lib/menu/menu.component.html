@@ -9,13 +9,15 @@
   </button>
 </mat-toolbar>
 
-<div class="content">
-  <div class="card" *ngFor="let item of (applications$ | async); let index=index">
-    <div class="overlay" *ngIf="currentIndex === index"></div>
-    <div class="card__icon-container">
+<div class="content flex flex-wrap p-[16px]">
+  <div class="card relative mt-[15px] mr-[15px] border border-solid border-black"
+       *ngFor="let item of (applications$ | async); let index=index">
+    <div class="overlay absolute -top-[1px] -bottom-[1px] -left-[1px] -right-[1px]"
+         *ngIf="currentIndex === index"></div>
+    <div class="card__icon-container w-[140px] h-[110px] flex justify-center items-center">
       <mat-icon>{{item.icon}}</mat-icon>
     </div>
-    <div class="card__text">
+    <div class="p-[7px] capitalize font-bold">
       {{item.name}}
     </div>
   </div>
