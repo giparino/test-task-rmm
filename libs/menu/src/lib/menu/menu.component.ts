@@ -127,7 +127,7 @@ export class MenuComponent implements OnInit, OnDestroy {
       this.currentIndex = 0;
     } else if (isVertically && this.isRequiredBlocksCount()) {
       this.currentIndex += this.columnsCount!;
-    } else if (this.currentIndex < this.applications.length - 1) {
+    } else if (!isVertically && this.currentIndex < this.applications.length - 1) {
       this.currentIndex += 1;
     }
   }
