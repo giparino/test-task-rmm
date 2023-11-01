@@ -100,7 +100,8 @@ export class MenuComponent implements OnInit, OnDestroy {
   private addResizeListener(): void{
     const element = document.querySelector('.card') as HTMLElement;
     if (element) {
-      const blockWidth: number = parseInt(window.getComputedStyle(element).width, 10) + parseInt(window.getComputedStyle(element).marginRight, 10);
+      const elementStyles = window.getComputedStyle(element);
+      const blockWidth: number = parseInt(elementStyles.width, 10) + parseInt(elementStyles.marginRight, 10);
       this.observer = new ResizeObserver(() => this.calculateColumns(blockWidth));
       this.observer.observe(this.host.nativeElement);
     }
@@ -108,7 +109,8 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   private calculateColumns(blockWidth: number): void {
     const container = document.querySelector('.content') as HTMLElement;
-    const containerWidth = container.clientWidth - parseInt(window.getComputedStyle(container).paddingLeft, 10) - parseInt(window.getComputedStyle(container).paddingRight, 10);
+    const containerStyles = window.getComputedStyle(container);
+    const containerWidth = container.clientWidth - parseInt(containerStyles.paddingLeft, 10) - parseInt(containerStyles.paddingRight, 10);
     this.columnsCount = Math.floor(containerWidth / blockWidth);
   }
 
